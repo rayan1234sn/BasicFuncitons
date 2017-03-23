@@ -1,0 +1,172 @@
+{% extends "candidateManager/base.html" %}
+
+
+{% block title_content %}
+Home
+{% endblock title_content %}
+
+
+{% block base_content %}
+<section>
+          
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-xs-6 col-lg-4">
+                <div class="card">
+                  <div class="card-body pv">
+                    <div class="clearfix">
+                      <div class="pull-left">
+                        <h4 class="m0 text-thin">350</h4><small class="m0 text-muted"><em class="mr-sm ion-arrow-up-b"></em>New visitors</small>
+                      </div>
+                      <div class="pull-right mt-lg">
+                        <div id="sparkline2" data-line-color="#4caf50" class="sparkline"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-6 col-lg-4">
+                <div class="card">
+                  <div class="card-body pv">
+                    <div class="clearfix">
+                      <div class="pull-left">
+                        <h4 class="m0 text-thin">10,200</h4><small class="m0 text-muted"><em class="mr-sm ion-arrow-down-b"></em>Page views</small>
+                      </div>
+                      <div class="pull-right mt-lg">
+                        <div id="sparkline1" data-line-color="#03A9F4" class="sparkline"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xs-6 col-lg-4 visible-lg">
+                <div class="card">
+                  <div class="card-body pv">
+                    <div class="clearfix">
+                      <div class="pull-left">
+                        <h4 class="m0 text-thin">880</h4><small class="m0 text-muted"><em class="mr-sm ion-arrow-up-b"></em>Last income</small>
+                      </div>
+                      <div class="pull-right mt-lg">
+                        <div id="sparkline3" data-line-color="#ab47bc" class="sparkline"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12 col-md-12">
+                <div class="row">
+                  <div class="col-lg-8">
+                    <div class="card">
+                      <div class="card-heading">
+                        <!-- START dropdown-->
+                        <div class="pull-right dropdown">
+                          <button type="button" data-toggle="dropdown" class="btn btn-default btn-flat btn-flat-icon ripple"><em class="ion-android-more-vertical"></em></button>
+                          <ul role="menu" class="dropdown-menu md-dropdown-menu dropdown-menu-right">
+                            <li><a href="">Last 30 days</a></li>
+                            <li><a href="">Last week</a></li>
+                            <li><a href="">Last year</a></li>
+                          </ul>
+                        </div>
+                        <!-- END dropdown-->
+                        <div class="card-title">Analytic board</div><small>Nulla commodo blandit cursus.</small>
+                      </div>
+                      <div class="card-body">
+                        <div role="group" aria-label="..." class="pull-right pr-sm btn-group btn-group-sm">
+                          <button type="button" class="btn btn-default btn-xs btn-default">Total</button>
+                          <button type="button" class="btn btn-default btn-xs btn-default">Average</button>
+                        </div>
+                        <div id="flot-main-spline" class="flot-chart flot-chart-lg flot-legend-left"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="card">
+                      <div class="card-heading">
+                        <div class="pull-right">
+                          <p class="m0 text-muted"><em class="mr-sm ion-arrow-up-b"></em>20%</p>
+                        </div>
+                        <div class="card-title">Earnings</div><small>Based on last month analytics.</small>
+                      </div>
+                      <div class="card-body">
+                        <div role="group" aria-label="..." class="btn-group btn-group-sm">
+                          <button type="button" class="btn btn-default btn-xs btn-default">2015</button>
+                          <button type="button" class="btn btn-default btn-xs btn-default">2016</button>
+                        </div>
+                        <div id="flot-stacked-chart" data-height="245px" class="flot-chart"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xs-12 col-lg-4">
+                    <div class="card">
+                      <div class="card-heading">
+                        <div class="pull-right"><span class="mr"><em class="ion-record spr text-primary"></em><small class="va-middle">2016</small></span><span><em class="ion-record spr text-success"></em><small class="va-middle">2015</small></span></div>
+                        <div class="card-title">Sales</div>
+                      </div>
+                      <div class="card-body">
+                        <div id="flot-bar-chart" data-height="235" class="flot-chart flot-chart-md"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xs-12 col-lg-8">
+                    <div class="card">
+                      <!-- START table-responsive-->
+                      <div class="table-responsive">
+                        <table class="table">
+                          <thead>
+                            <tr>
+                              <th>#</th>
+                              <th>Project</th>
+                              <th>Completion</th>
+                              <th class="text-right">Trend</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td class="va-middle"><span class="badge bg-pink-500">1</span></td>
+                              <td>
+                                <p class="m0">Vestibulum<br><small class="text-thin">Nunc posuere eleifend lobortis.</small></p>
+                              </td>
+                              <td class="va-middle">50%</td>
+                              <td class="text-right va-middle"><em class="ion-arrow-graph-up-right text-success"></em></td>
+                            </tr>
+                            <tr>
+                              <td class="va-middle"><span class="badge bg-purple-400">2</span></td>
+                              <td>
+                                <p class="m0">Runfaster<br><small class="text-thin">Nunc posuere eleifend lobortis.</small></p>
+                              </td>
+                              <td class="va-middle">30%</td>
+                              <td class="text-right va-middle"><em class="ion-arrow-graph-down-right text-warning"></em></td>
+                            </tr>
+                            <tr>
+                              <td class="va-middle"><span class="badge bg-indigo-500">3</span></td>
+                              <td>
+                                <p class="m0">Medic Healthcare<br><small class="text-thin">Nunc posuere eleifend lobortis.</small></p>
+                              </td>
+                              <td class="va-middle">80%</td>
+                              <td class="text-right va-middle"><em class="ion-arrow-graph-up-right text-success"></em></td>
+                            </tr>
+                            <tr>
+                              <td class="va-middle"><span class="badge bg-info">4</span></td>
+                              <td>
+                                <p class="m0">Videotubeyou<br><small class="text-thin">Nunc posuere eleifend lobortis.</small></p>
+                              </td>
+                              <td class="va-middle">50%</td>
+                              <td class="text-right va-middle"><em class="ion-arrow-graph-down-right text-warning"></em></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <!-- END table-responsive-->
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+          </div>
+        </section>
+
+{% endblock base_content %}

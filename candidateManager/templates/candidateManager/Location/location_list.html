@@ -1,0 +1,47 @@
+{% extends "candidateManager/base.html" %}
+
+{% block title_content %}
+Locations
+{% endblock title_content %}
+
+
+
+{% block base_content %}
+          <div class="container container-fluid">
+            <div class="mb-lg text-right ">
+              <a href="{% url "location_new" %}"> <button type="button" class="btn btn-info"><em class="ion-plus mr-sm"></em>Add Location</button> </a>
+            </div>
+<ul>
+    {% for Location in object_list %}  
+   	    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                <div class="card bg-info">
+                  <div class="card-body" >
+                  <!-- START dropdown-->
+                    <div class="pull-right dropdown visible-lg visible-md">
+                      <button type="button" data-toggle="dropdown" class="btn btn-flat btn-flat-icon"><em class="ion-android-more-vertical"></em></button>
+                      <ul role="menu" class="dropdown-menu md-dropdown-menu dropdown-menu-right">
+                        <li><a href="{% url "location_detail" Location.id %}">Details</a></li>
+                      </ul>
+                    </div>
+                    <p class="lead m0">{{ Location.city }}, </p>
+                    <p class="lead m0">{{ Location.state }}</p>
+                  </div>
+                  <div class="card-footer text-right">
+                    	 <a href="{% url "location_filter" Location.id %}"> <button type="button" class="btn btn-flat btn-info text-white"> Job Requesitions </button> </a> 	  
+                  </div>
+                </div>
+        </div>
+   	{% endfor %}
+</ul>
+
+
+
+
+{% endblock base_content %}
+
+
+
+
+
+
+

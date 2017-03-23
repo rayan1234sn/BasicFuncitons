@@ -1,0 +1,101 @@
+{% extends "candidateManager/base.html" %}
+{% block title_content %}
+Edit Candidate
+{% endblock title_content %}
+
+
+{% block base_content %}
+<ul>
+<div class="container container-lg">
+            <div class="card">
+              <div class="card-heading">
+                <div class="card-title"></div>
+              </div>
+              <form method="post" class="card b0 form-validate">
+              {% csrf_token %}
+              <div class="card-body">
+              {{ form.as_p}}
+              <div class="pull-right mt-sm">
+              <button type="submit" class="btn btn-primary btn-flat">Submit</button>
+                    </div>
+                  </div>
+                </div>
+</form> 
+
+<!--           <div class="container container-lg">
+            <div class="card">
+              <div class="card-heading">
+                <div class="card-title"></div>
+              </div>
+              <form  method="POST" novalidate="" class="card b0 form-validate">
+              {% csrf_token %}
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="mda-form-group">
+                      <div class="mda-form-control">
+                       <input id="id_firstName" maxlength="20" name="firstName" type="text" value="{{object.firstName}}"" required="" />
+                        <div class="mda-form-control-line"></div>
+                        <label>First Name</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="mda-form-group">
+                      <div class="mda-form-control">
+                        <input id="id_lastName" name="lastName" required="" tabindex="0" aria-required="true" aria-invalid="true" class="form-control" value = {{object.lastName}}>
+                        <div class="mda-form-control-line"></div>
+                        <label>Last Name</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="mda-form-group">
+                      <div class="mda-form-control">
+                        <input input id="id_email" name="email" tabindex="0" aria-invalid="false" class="form-control" value = {{object.email}}>
+                        <div class="mda-form-control-line"></div>
+                        <label>Email</label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="mda-form-group">
+                      <div class="mda-form-control">
+                        <input id="id_phoneNumber" name="phoneNumber" tabindex="0" aria-invalid="false" class="form-control" value = {{object.phoneNumber}}>
+                        <div class="mda-form-control-line"></div>
+                        <label>Phone Number</label>
+                      </div>
+                    </div>
+                  </div>        
+                </div>
+                  
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="mda-form-group">
+                      <div class="mda-form-control">
+                      <select id="id_jobRequesition" name="jobRequesition" class="form-control" required>
+                      {% for JobRequesition in job_list %}
+                      <option value="{{forloop.counter}}">{{JobRequesition}}</option>
+                      {% endfor  %}
+                      </select>
+                        <div class="mda-form-control-line"></div>
+                        <label>Applying for</label>
+                      </div>
+                    </div>
+                    <div class="pull-right mt-sm">
+                      <button type="submit" class="btn btn-primary btn-flat">Submit</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+           
+        </div>
+
+
+
+</form> -->
+</ul>
+
+{% endblock base_content %}

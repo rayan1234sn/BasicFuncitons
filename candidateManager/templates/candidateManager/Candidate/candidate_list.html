@@ -1,0 +1,50 @@
+{% extends "candidateManager/base.html" %}
+{% load staticfiles %}
+{% block title_content %}
+Candidates
+{% endblock title_content %}
+
+
+{% block base_content %}
+
+
+          <div class="container container-fluid">
+            <div class="mb-lg text-right">
+              <a href="{% url "candidate_new" %}"> <button type="button" class="btn btn-info"><em class="ion-plus mr-sm"></em>Add Candidate</button> </a>
+            </div>
+
+        <div class="card">
+              <div class="card-body">
+                <table id="datatable1" class="table-datatable table table-striped table-hover mv-lg">
+                  <thead>
+                    <tr>
+                      <th class="sort-alpha">Name</th>
+                      <th class="sort-alpha">Applying For</th>
+                      <th class="sort-alpha">Location</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                  {% for Candidate in object_list %}
+
+                    <tr>
+                      <td>{{ Candidate.firstName }} {{ Candidate.lastName }}</td>
+                      <td>{{ Candidate.jobRequesition.position}}</td>
+                      <td>{{ Candidate.jobRequesition.location}}</td>
+                      <td>
+                      <a href="{% url "candidate_detail" Candidate.id %}"> <button type="button" class="btn btn-flat btn-md btn-info"><em class="ion-document-text"></em></button> </a>
+                      <a href="{% url "candidate_edit" Candidate.id %}"> <button type="button" class="btn btn-flat btn-md btn-info"><em class="ion-edit"></em></button> </a>
+                      <a href="{% url "candidate_delete" Candidate.id %}"> <button type="button" class="btn btn-flat btn-md btn-danger"><em class="ion-trash-a"></em></button> </a>
+                      </td>
+                  
+                    </tr>
+                    
+                  {% endfor %}
+        
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+{% endblock base_content %}

@@ -1,0 +1,58 @@
+{% extends "candidateManager/base.html" %}
+
+{% block title_content %}
+Job Requesitions
+{% endblock title_content %}
+
+
+{% block base_content %}
+          <div class="container container-fluid">
+            <div class="mb-lg text-right">
+              <a href="{% url "jobRequesition_new" %}"> <button type="button" class="btn btn-info"><em class="ion-plus mr-sm"></em>Add Job</button> </a>
+            </div>
+
+        <div class="card">
+              <div class="card-body">
+                <table id="datatable1" class="table-datatable table table-striped table-hover mv-lg">
+                  <thead>
+                    <tr>
+                      <th class="sort-alpha">Job</th>
+                      <th class="sort-alpha">Location</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                    {% for JobRequesiton in object_list %} 
+
+                    <tr>
+                      <td>{{ JobRequesiton.position }}</td>
+                      <td>{{ JobRequesiton.location }}</td>
+                      <td>
+                      <a href="{% url "jobRequesition_detail" JobRequesiton.id %}"> <button type="button" class="btn btn-flat btn-md btn-info"><em class="ion-document-text"></em></button> </a>
+                      <a href="{% url "jobRequesition_edit" JobRequesiton.id %}"> <button type="button" class="btn btn-flat btn-md btn-info"><em class="ion-edit"></em></button> </a>
+                      <a href="{% url "jobRequesition_delete" JobRequesiton.id %}"> <button type="button" class="btn btn-flat btn-md btn-danger"><em class="ion-trash-a"></em></button> </a>
+                      </td>
+                  
+                    </tr>
+                    
+                  {% endfor %}
+        
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+{% endblock base_content %}
+
+
+
+
+
+
+
+
+
+
+

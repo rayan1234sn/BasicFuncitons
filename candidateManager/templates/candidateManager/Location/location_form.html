@@ -1,0 +1,27 @@
+{% extends "candidateManager/base.html" %}
+{% load staticfiles %}
+{% block title_content %}
+Location
+{% endblock title_content %}
+
+
+{% block base_content %}
+
+
+<div class="container container-lg">
+            <div class="card">
+              <div class="card-heading">
+                <div class="card-title"></div>
+              </div>
+              <form method="post" class="card b0 form-validate">
+              {% csrf_token %}
+              <div class="card-body">
+              {{ form.as_p }}
+              <div class="pull-right mt-sm">
+              <button type="submit" class="btn btn-primary btn-flat">Submit</button>
+                    </div>
+                  </div>
+                </div>
+</form> 
+
+{% endblock base_content %}

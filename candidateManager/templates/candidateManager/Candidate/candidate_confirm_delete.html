@@ -1,0 +1,22 @@
+{% extends "candidateManager/base.html" %}
+{% block title_content %}
+Delete {{ object.firstName }} {{ object.lastName }}
+{% endblock title_content %}
+
+
+{% block base_content %}
+          <form method="post">{% csrf_token %}
+          <div class="container container-fluid">
+            <div class="card">
+              <div class="card-body">
+                <div class="text-center pb-lg">
+                  <h3 class="text-bold">Are you sure you want to delete 
+    				"{{ object.firstName }} {{ object.lastName }}" ?</h3>
+
+                  <input type="submit" value="Delete" <button type="button" class="btn btn-info"></button>
+                	</div>
+					</div>
+                  </div>
+                </div>
+        	</form>
+{% endblock base_content %}
