@@ -25,9 +25,9 @@ SECRET_KEY = '@=d42qs=)*bnxwnk+p%xt2f91!ye7e15t^@-yijc_8$qthm-11'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['agilitycandidatemanager.pythonanywhere.com']
 
-
+#TEST TEST TEST
 # Application definition
 
 INSTALLED_APPS = [
