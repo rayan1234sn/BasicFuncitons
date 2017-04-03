@@ -37,33 +37,18 @@
                     <table class="table table-striped">
                       <tbody>
                         <tr>
-                          <td><em class="ion-document-text icon-fw mr"></em>Area</td>
-                          <td>Research &amp; development</td>
+                          <td><em class="ion-document-text icon-fw mr"></em>Position</td>
+                          <td>{{object.position}}</td>
                         </tr>
                         <tr>
-                          <td><em class="ion-egg icon-fw mr"></em>Birthday</td>
-                          <td><span data-type="date" data-mode="popup" class="is-editable text-inherit">10/11/2000</span></td>
+                          <td><em class="ion-document-text icon-fw mr"></em>Location</td>
+                          <td><span data-type="date" data-mode="popup" class="is-editable text-inherit">{{object.location}}</span></td>
                         </tr>
                         <tr>
-                          <td><em class="ion-ios-body icon-fw mr"></em>Member since</td>
-                          <td><span data-type="date" data-mode="popup" class="is-editable text-inherit">05/11/2015</span></td>
+                          <td><em class="ion-ios-body icon-fw mr"></em>Offer Rate</td>
+                          <td><span data-type="date" data-mode="popup" class="is-editable text-inherit">{{object.offerRate}}</span></td>
                         </tr>
-                        <tr>
-                          <td><em class="ion-man icon-fw mr"></em>Gender</td>
-                          <td><a id="gender" href="#" data-type="select" data-pk="1" data-value="2" data-title="Select sex" class="text-inherit"></a></td>
-                        </tr>
-                        <tr>
-                          <td><em class="ion-android-home icon-fw mr"></em>Address</td>
-                          <td><span class="is-editable text-inherit">Some street, 123</span></td>
-                        </tr>
-                        <tr>
-                          <td><em class="ion-email icon-fw mr"></em>Email</td>
-                          <td><span class="is-editable text-inherit"><a href="#">user@mail.com</a></span></td>
-                        </tr>
-                        <tr>
-                          <td><em class="ion-ios-telephone icon-fw mr"></em>Contact phone</td>
-                          <td><span class="is-editable text-inherit">13-123-46578</span></td>
-                        </tr>
+                        
                       </tbody>
                     </table>
                   </div>
@@ -74,13 +59,13 @@
                 <div class="card">
                   <h5 class="card-heading">
                     <!-- START dropdown-->
-                    <div class="pull-right dropdown">
+                    <!-- <div class="pull-right dropdown">
                       <button type="button" data-toggle="dropdown" class="btn btn-default btn-flat btn-flat-icon"><em class="ion-android-more-vertical"></em></button>
                       <ul role="menu" class="dropdown-menu md-dropdown-menu dropdown-menu-right">
                         <li><a href="#">Action 1</a></li>
                         <li><a href="#">Action 2</a></li>
                       </ul>
-                    </div>
+                    </div> -->
                     <!-- END dropdown-->
                     Candidates:
                   </h5>
@@ -91,7 +76,7 @@
                       <div class="mda-list-item"><img img src="{% static 'img/icons/person-stalker.svg' %}" alt="List user" class="mda-list-item-img">
 	                      <div class="mda-list-item-text mda-2-line">
 	                        <h3><a href="{% url "candidate_detail" Candidate.id %}"> {{Candidate.firstName}} {{Candidate.lastName}} </a></h3>
-	                        <div class="text-muted text-ellipsis"> Candidate company here</div>
+	                       <!--  <div class="text-muted text-ellipsis"> Candidate company here</div> -->
 	                      </div>
 	                    </div>
                       {% endif %}
